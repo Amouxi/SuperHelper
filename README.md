@@ -2,7 +2,7 @@
 Special thanks to the contributors at https://gtfobins.github.io/ for their outstanding work. Their comprehensive database has been a lifesaver. This script utilizes their remarkable data to assist in identifying and analyzing potential security misconfigurations. Kudos to the GTFOBins team!
 
 # Why SuperHelper
-With SudoSuidFinder, you won't miss a thing! The script provides a clear and
+With SuperHelper, you won't miss a thing! The script provides a clear and
 color-coded output, making it easy to identify important information. It checks
 available SUDO commands and available SUID binaries against https://gtfobins.github.io/, ensuring comprehensive coverage.
 
@@ -29,18 +29,18 @@ python main.py -d
 * Local Variable: Parsed GTFOBin data as base64-encoded variable within the script. This allows offline usage without the need for online retrieval mini.
 Execute `python SuperHelper.py -cb` to obtain base64 encoded version of the json data.
 ```commandline
-python main.py -cb
+python superhelper.py -cb
 eyc3ei[...SNIPPED...]LCAnc3VkbyddfQ==
 ```
 Copy the data and replace the variable `BASE64_ENCODED_GTFOBIN` variable which currently is set to `CHANGETHIS` in its place.
 Now execute `python SuperHelper.py -lb` to use the base64 encoded json data.
 ```commandline
-python main.py -s -S -p kali -lb
+python superhelper.py -s -S -p kali -lb
 ```
 
 # Help message
 ```commandline
-usage: main.py [-h] [-s | --suid | --no-suid] [-S | --sudo | --no-sudo] [-p PASSWD] [-lb | --lbase64 | --no-lbase64] [-cb | --cbase64 | --no-cbase64] [-d | --download | --no-download]
+usage: superhelper.py [-h] [-s | --suid | --no-suid] [-S | --sudo | --no-sudo] [-p PASSWD] [-lb | --lbase64 | --no-lbase64] [-cb | --cbase64 | --no-cbase64] [-d | --download | --no-download]
 
 Perform checks for SUDO/SUID
 
@@ -61,27 +61,27 @@ options:
 ```
 # Download and parse GTFOBins data
 ```commandline
-python main.py -d
+python superhelper.py -d
 ```
 
 # Create base64-encoded GTFOBin data (Action requires an internet connection)
 ```commandline
-python main.py -cb
+python superhelper.py -cb
 eyc3ei[...SNIPPED...]LCAnc3VkbyddfQ==
 ```
 
 # Check SUDO commands using a local base64-encoded variable
 ```commandline
-python main.py -S -p Password123! -lb
+python superhelper.py -S -p Password123! -lb
 ```
 # Check for SUID binaries
 ```commandline
-python main.py -s
+python superhelper.py -s
 ```
 
 # Check both SUDO commands and SUID binaries together
 ```commandline
-python main.py -s -S -p Password123! 
+python superhelper.py -s -S -p Password123! 
 ```
 
 # Print example:
